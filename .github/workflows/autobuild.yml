@@ -24,3 +24,8 @@ jobs:
           push: true
           context: .
           tags: ${{ secrets.DOCKER_USERNAME }}/demo-service:${{ github.sha }}
+      - name: Deploy to acme.com/v1/workloads/demo/default/demo-service
+        run: "curl -X PATCH -H \"content-type: application/json\"
+          https://kblocks.io/api/resources/acme.com/v1/workloads/demo/default/d\
+          emo-service -d '{\"{field}\":\"${{ secrets.DOCKER_USERNAME
+          }}/demo-service:${{ github.sha }}\"}'"
