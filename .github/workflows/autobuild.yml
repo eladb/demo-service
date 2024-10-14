@@ -24,6 +24,3 @@ jobs:
           push: true
           context: .
           tags: ${{ secrets.DOCKER_USERNAME }}/demo-service:${{ github.sha }}
-      - name: Deploy
-        run: echo "Deploying image ${{ secrets.DOCKER_USERNAME }}/demo-service:${{
-          github.sha }} to production"
