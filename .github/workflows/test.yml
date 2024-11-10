@@ -13,4 +13,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello ${{ github.event.inputs.foo }}"
+      - run: sleep 10
       - run: exit 1
